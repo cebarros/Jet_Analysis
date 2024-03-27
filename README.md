@@ -18,7 +18,7 @@ To run on CoffeaCasa, simply access the site **[coffea-casa](https://coffea.casa
 
 ### Running on LPC
 
-For running on LPC, we follow the instructions from **[lpcjobqueue](https://github.com/CoffeaTeam/lpcjobqueue)**. First SSH to cmslpc by replacing `<username>` with your credentials:
+For running on LPC, we follow the instructions from **[lpcjobqueue](https://github.com/CoffeaTeam/lpcjobqueue)**. First SSH to cmslpc by replacing `<username>` with your credential:
 
 ```
 kinit <username>@FNAL.GOV
