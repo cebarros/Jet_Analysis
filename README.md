@@ -10,7 +10,7 @@ The notebook `jec_computations.ipynb` uses the pkl files produced in `qcd_proces
 
 Lastly, the `jer_plotting.ipynb` file is used to plot the JER curves as functions of the jet $p_T$ for all datasets. 
 
-# Running the files
+# Running the Files
 
 ### Running on CoffeaCasa
 
@@ -43,4 +43,10 @@ bash bootstrap.sh
 jupyter-lab
 ```
 
-If successful, you should have an output with a URL simlar to `http://127.0.0.1:8888/lab?token=37193e107b0cbe947108fcaef2d6ecf3d507c2306bbae0ea`; copy this URL, and paste it into your browser to start the analysis.
+If successful, you should have an output with a URL simlar to:
+
+```
+http://127.0.0.1:8888/lab?token=37193e107b0cbe947108fcaef2d6ecf3d507c2306bbae0ea
+```
+
+Copy this URL and paste it into your browser to start the analysis.
