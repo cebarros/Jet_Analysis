@@ -8,11 +8,16 @@ from coffea import util, processor
 from coffea.nanoevents import NanoEventsFactory, NanoAODSchema, BaseSchema
 from collections import defaultdict
 import correctionlib
+from coffea import nanoevents, util
+np.seterr(divide='ignore', invalid='ignore')
+import glob as glob
+import re
+import itertools
+from coffea.lookup_tools import extractor
+from coffea.jetmet_tools import JECStack, CorrectedJetsFactory
 
 class util_binning :
-    '''
-    Class to implement the binning schema for jet mass and pt 2d unfolding. The gen-level mass is twice as fine. 
-    '''
+
     def __init__(self):
         
         self.dataset_axis = hist.axis.StrCategory([], growth=True, name="dataset", label="Primary dataset")
@@ -24,7 +29,8 @@ class util_binning :
         self.rho_axis = hist.axis.Regular(100, 0, 101, name="rho", label=r"$\rho$")
         self.npvs_axis = hist.axis.Regular(190, 0, 191, name="npvs", label="$N_{PV}$")
         self.npu_axis = hist.axis.Regular(60, 0, 120, name="npu", label="$N_{PU}$")
-        
+      
+    
 def GetPUSF(IOV, nTrueInt, var='nominal'):
     
     corrlib_namemap = {
@@ -44,6 +50,7 @@ def GetPUSF(IOV, nTrueInt, var='nominal'):
     
     evaluator = correctionlib.CorrectionSet.from_file(fname)
     return evaluator[hname[IOV]].evaluate(np.array(nTrueInt), var)
+
 
 def gaussian_function(x, amplitude, mean, standard_dev):
     return amplitude * np.exp(- (x - mean)**2 / (2. * standard_dev**2))
