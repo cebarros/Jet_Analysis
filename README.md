@@ -25,7 +25,7 @@ kinit <username>@FNAL.GOV
 ssh -L localhost:8888:localhost:8888  <username>@cmslpc-sl7.fnal.gov
 ```
 
-Next you must obatin a voms ticket, make a working area, and clone this repository that area:
+Next you must obatin a voms ticket, make a working area, and clone this repository to that area:
 
 ```
 voms-proxy-init -voms cms
