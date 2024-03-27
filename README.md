@@ -4,9 +4,9 @@ The raw jet kinematics and observables of our files can be viewed in the `raw_je
 
 Next we apply cuts/masks to our analysis, which can be seen in the `qcd_jets.ipynb` notebook; the goal of this file is to obtain a $p_T$ response curve. As before, this is scaled-up to include all our dataset `qcd_jets_processor.ipynb`. 
 
-The `qcd_processor.ipynb` notebook fills histograms using the ROOT files in `/samples`, and corrects them using the pileup weights found in `/data`; the histograms are then dumped into pkl files.
+The `qcd_jets_processor.ipynb` notebook produces histograms using the ROOT files in `/samples`, and corrects them using the pileup weights found in `/data`; the histograms are then dumped into pkl files.
 
-The notebook `jec_computations.ipynb` uses the pkl files produced in `qcd_processor.ipynb` to produce $p_T$ response curves, and then fits them to gaussian functions. The means and widths, and their respective errors are then put in a CSV file for analyzing.
+The notebook `jer_computations.ipynb` uses the pkl files produced in `qcd_jets_processor.ipynb` to produce $p_T$ response curves, and then fits them to gaussian functions. The means and widths, and their respective errors are then put in a CSV file for analyzing.
 
 Lastly, the `jer_plotting.ipynb` file is used to plot the JER curves as functions of the jet $p_T$ for all datasets. 
 
