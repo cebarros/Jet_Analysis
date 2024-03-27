@@ -124,14 +124,14 @@ class QCDProcessor(processor.ProcessorABC):
         
         ### Pileup Weights
         
-        #puWeight = GetPUSF(dataset, np.array(ak.flatten(pu_nTrueInt)))
+        puWeight = GetPUSF(dataset, np.array(ak.flatten(pu_nTrueInt)))
         
         ##############################
         ### Filling the Histograms ###
         ##############################
         
-        self.hists["responses_histogram"].fill(dataset=dataset, frac=ak.flatten(pt_response), eta=np.abs(ak.flatten(gen_jets.eta)), pt=ak.flatten(gen_jets.pt))#, weight=puWeight)
-        self.hists["corrections_histogram"].fill(dataset=dataset, npvs=ak.ravel(n_reco_vtx), npu=ak.ravel(n_pileup), rho=ak.ravel(rho))#, weight=puWeight)
+        self.hists["responses_histogram"].fill(dataset=dataset, frac=ak.flatten(pt_response), eta=np.abs(ak.flatten(gen_jets.eta)), pt=ak.flatten(gen_jets.pt), weight=puWeight)
+        self.hists["corrections_histogram"].fill(dataset=dataset, npvs=ak.ravel(n_reco_vtx), npu=ak.ravel(n_pileup), rho=ak.ravel(rho), weight=puWeight)
         
         return self.hists
     

@@ -24,7 +24,12 @@ class util_binning :
         self.frac_axis = hist.axis.Regular(300, 0, 2, name="frac", label="Ratio")
         self.eta_axis = hist.axis.Regular(100, -8.1, 8.1, name="eta", label="$\eta$")
         self.phi_axis = hist.axis.Regular(100, -2*np.pi, 2*np.pi, name="phi", label="$\phi$")
-        self.pt_axis = hist.axis.Regular(500, 0, 13500, name="pt", label="$p_T$")
+        #self.pt_axis = hist.axis.Variable([200,260,350,460,550,650,760,13000], name="pt", label="$p_T$")
+        self.pt_axis = hist.axis.Variable(
+            [10, 11, 12, 13, 14, 15, 17, 20, 23, 27, 30, 35, 40, 45, 57, 72, 90, 120, 150, 
+            200, 300, 400, 550, 750, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 5000, 10000], 
+            name="pt", label=r"$p_{T}$ [GeV]"
+        )
         
         self.rho_axis = hist.axis.Regular(100, 0, 101, name="rho", label=r"$\rho$")
         self.npvs_axis = hist.axis.Regular(190, 0, 191, name="npvs", label="$N_{PV}$")
